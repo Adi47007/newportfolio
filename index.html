@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aditya Saini | Portfolio</title>
+
+  <script type="text/javascript"
+   src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+   (function(){
+      emailjs.init({
+         publicKey: "5fgGIDL0qY1LBRAnd",
+   });
+  })();
+  </script>
+  <style>
+    * {
+      scroll-behavior: smooth;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #eef2f3;
+      color: #333;
+      position: relative;
+      overflow-x: hidden;
+    }
+    #experience {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+#experience h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.experience-item {
+  background: white;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 5px solid #0073b1;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  animation: slideUp 1s ease;
+}
+
+.experience-item h3 {
+  margin-bottom: 0.25rem;
+  color: #0073b1;
+}
+
+.experience-item p {
+  font-style: italic;
+  margin-bottom: 0.75rem;
+}
+
+.experience-item ul {
+  padding-left: 1.2rem;
+  list-style-type: disc;
+}
+
+    /* Background Animation */
+    .bg-animation {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.5;
+      filter: blur(100px);
+      animation: move 20s infinite ease-in-out;
+    }
+    .blob1 { background: #00bcd4; width: 300px; height: 300px; top: 10%; left: 10%; }
+    .blob2 { background: #ff4081; width: 400px; height: 400px; top: 60%; left: 50%; }
+    .blob3 { background: #8e24aa; width: 250px; height: 250px; top: 40%; left: 80%; }
+    @keyframes move {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(50px, -50px); }
+    }
+
+    nav {
+      background: #0073b1;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .menu-btn {
+      display: block;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: white;
+      background: none;
+      border: none;
+    }
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 1rem;
+      background: #0073b1;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .nav-links a {
+      color: white;
+      padding: 1rem;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      transition: background 0.3s;
+    }
+    .nav-links a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    .nav-active {
+      display: flex;
+    }
+    header, section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      animation: fadeIn 1s ease;
+    }
+    header {
+      text-align: center;
+      padding-top: 2rem;
+    }
+    .project-card {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: slideUp 1s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .project-card a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      text-decoration: none;
+      background: #0073b1;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    .project-card a:hover {
+      background: #005580;
+    }
+    h1, h2 {
+      color: #1a1a1a;
+    }
+    footer {
+      background: #1a1a1a;
+      color: #ddd;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      margin-top: 3rem;
+    }
+    footer a {
+      color: #f0f0f0;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .skill {
+      background: #ffffff;
+      padding: 0.75rem 1.25rem;
+      border-radius: 5px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @media (min-width: 768px) {
+      .menu-btn { display: none; }
+      .nav-links {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        background: none;
+      }
+      .nav-links a {
+        border: none;
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-animation">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+  </div>
+
+  <nav>
+    <button class="menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('nav-active')">☰ Menu</button>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills & Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header id="home">
+    <h1>Hi, I am Aditya Saini</h1>
+    <p>B.Tech (EE), Delhi Technological University (2021–2025)</p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm an enthusiastic engineering student with a passion for building scalable web apps,
+      exploring AI/ML tools, and crafting clean UI/UX. I love working on real-world challenges
+      and learning new tech every day.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <h3>Global SuperStore Sales Dashboard</h3>
+      <p>PowerBI, Excel</p>
+      <a href="https://github.com/Adi47007/Global-Superstore-Sales-Dashboard" target="_blank">Check It Out</a>
+    </div>
+    <div class="project-card">
+      <h3>Weather App</h3>
+      <p>HTML, CSS, JavaScript, OpenWeather API</p>
+      <a href="https://adi47007.github.io/Weather-App/" target="_blank">Live Demo</a>
+    </div>
+    <div class="project-card">
+      <h3>Employee CRUD App</h3>
+      <p>Python, MySQL, Tkinter, Matplotlib</p>
+      <a href="https://github.com/Adi47007/python---Crud-App" target="_blank">View Code</a>
+    </div>
+    <div class="project-card">
+      <h3>Text to Speech App</h3>
+      <p>Python, gTTS, Gradio</p>
+      <a href="https://huggingface.co/spaces/Adi1290/Text_tospeech" target="_blank">Try It</a>
+    </div>
+    <div class="project-card">
+      <h3>Flappy Bird Clone</h3>
+      <p>Unity, C#</p>
+      <a href="https://github.com/Adi47007/FlappyBirdGame" target="_blank">Play Code</a>
+    </div>
+  </section>
+  <section id="skills" data-aos="fade-up">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">Python</div>
+      <div class="skill">React</div>
+      <div class="skill">MySQL</div>
+      <div class="skill">Power BI</div>
+      <div class="skill">Unity</div>
+    </div>
+  </section>
+  <section id="experience" data-aos="fade-up">
+    <h2>Experience</h2>
+  
+    <div class="experience-item">
+      <h3>Web Development Intern – Unified Mentor Pvt. Ltd., New Delhi</h3>
+      <p>May 2023 – July 2023</p>
+      <ul>
+        <li>Built responsive UI using HTML, CSS, JavaScript.</li>
+        <li>Developed mini-projects (dice game, drum kit) as part of learning modules.</li>
+        <li>Assisted in upgrading the user interface of company website.</li>
+      </ul>
+    </div>
+  
+    <div class="experience-item">
+      <h3>Technical Assistant Intern – Vinay Electric Works, New Delhi</h3>
+      <p>May 2024 – July 2024</p>
+      <ul>
+        <li>Managed inventory records and ensured supply availability.</li>
+        <li>Created a Python + SQL-based Employee CRUD application.</li>
+        <li>Maintained customer and equipment logs using Excel.</li>
+      </ul>
+    </div>
+  </section>
+  
+  <section id="contact">
+    <h2 style="text-align: center; margin-bottom: 1rem;">Contact Me</h2>
+    <form id="contactForm" style="max-width: 600px; margin: 0 auto; background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+      <input type="text" id="name" name="name" placeholder="Your Name" required style="width: 100%; padding: 0.75rem; margin-bottom: 1rem;">
+      <input type="email" id="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 0.75rem; margin-bottom: 1rem;">
+      <textarea id="message" name="message" rows="5" placeholder="Your Message" required style="width: 100%; padding: 0.75rem; margin-bottom: 1.5rem;"></textarea>
+      <button type="submit" style="background: #0073b1; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 5px;">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Aditya Saini. All rights reserved.</p>
+    <p>
+      <a href="https://huggingface.co/spaces/Adi1290/">HuggingFace</a> |
+      <a href="https://www.linkedin.com/in/aditya-saini-3bb67427a/">LinkedIn</a> |
+      <a href="https://github.com/Adi47007" target="_blank">GitHub</a>
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+      };
+
+      emailjs.send('service_pkmjgaj', 'template_l6uss8m', formData)
+        .then(function(response) {
+          alert('Message sent successfully!');
+          document.getElementById('contactForm').reset();
+        }, function(error) {
+          alert('Failed to send the message. Please try again later.');
+        });
+    });
+  </script>
+</body>
+</html>
+
+
