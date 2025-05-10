@@ -333,7 +333,7 @@
   
   <section id="contact">
     <h2 style="text-align: center; margin-bottom: 1rem;">Contact Me</h2>
-    <form id="contactForm" style="max-width: 600px; margin: 0 auto; background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+    <form action="https://formspree.io/f/xdkgdywr" method="POST" id="contactForm" style="max-width: 600px; margin: 0 auto; background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
       <input type="text" id="name" name="name" placeholder="Your Name" required style="width: 100%; padding: 0.75rem; margin-bottom: 1rem;">
       <input type="email" id="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 0.75rem; margin-bottom: 1rem;">
       <textarea id="message" name="message" rows="5" placeholder="Your Message" required style="width: 100%; padding: 0.75rem; margin-bottom: 1.5rem;"></textarea>
@@ -350,24 +350,6 @@
     </p>
   </footer>
 
-  <script>
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        message: document.getElementById('message').value
-      };
-
-      emailjs.send('service_pkmjgaj', 'template_l6uss8m', formData)
-        .then(function(response) {
-          alert('Message sent successfully!');
-          document.getElementById('contactForm').reset();
-        }, function(error) {
-          alert('Failed to send the message. Please try again later.');
-        });
-    });
-  </script>
 </body>
 </html>
 
