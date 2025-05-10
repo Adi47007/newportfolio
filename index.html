@@ -68,7 +68,7 @@
   list-style-type: disc;
 }
 
-    /* Background Animation */
+    
     .bg-animation {
       position: fixed;
       top: 0; left: 0;
@@ -220,6 +220,24 @@
         padding: 0 1rem;
       }
     }
+    body {
+      cursor: arrow;
+    }
+
+    .custom-cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background-color: #00bcd4;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: background-color 0.2s ease;
+    }
+
   </style>
 </head>
 <body>
@@ -349,6 +367,25 @@
       <a href="https://github.com/Adi47007" target="_blank">GitHub</a>
     </p>
   </footer>
+  <div class="custom-cursor"></div>
+  <script>
+    const cursor = document.querySelector('.custom-cursor');
+
+    document.addEventListener('mousemove', e => {
+      cursor.style.top = `${e.clientY}px`;
+      cursor.style.left = `${e.clientX}px`;
+    });
+
+    
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.backgroundColor = '#ff4081';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.style.backgroundColor = '#00bcd4';
+      });
+    });
+</script>
 
 </body>
 </html>
